@@ -1,0 +1,13 @@
+apiVersion: configmanagement.gke.io/v1
+kind: ConfigManagement
+metadata:
+  name: config-management
+spec:
+  # clusterName is required and must be unique among all managed clusters
+  enableMultiRepo: true
+  clusterName: csmr-fs-cluster
+  git:
+    syncRepo: https://github.com/DataGP/csmr-sample/
+    syncBranch: master
+    secretType: ssh
+    policyDir: https://github.com/DataGP/csmr-sample/
